@@ -1,0 +1,39 @@
+Avant de me pencher sur le comportment des agents, je fais le moteur.
+on doit pouvoir avoir un environment capable de récupérer l'action des agents en même temps et de les éxécutés.
+Pas besoin d'une liste d'agents il ne seront toujours que 2 , pareils pour leurs actions.
+
+Apres relecture du diaporama, ce que je comprend , les agents sois se taise sois parle et récupère des points selon le choix de l'autre.
+Il y a que 4 scénario possible un "if else" fais l'affaire et est mieux(selon moi)   qu'un "switch case". 
+
+Donc l'action sera un simple booléan 1 ou 0, ensuite il faudra prendre l'attribution des points, il faudra définir le score de chacun.
+
+Le système de score est implémenté , il sera améliorable plus tard .
+il faudra stocké les actions , rajout de self.log dans la classe.
+
+j'implémente la simulation d'un step,
+sois la boucle:
+    allagents.met à jourInfo -> fait un choix -> calcule des scores
+sois
+    fait un choix -> calcule des scores ->  allagents.met à jourInfo
+
+pour l'instant logiquement, je préfère la 2.
+
+Pour implémenter ça j'ai besoin d'une "réfléxion de l'agent" et de sa structure de donné, elle sera simple mais pour propreté j'en fais une classe.
+
+Apres relecture plus approfondies, la logique n'est pas trop complexe, j'ai l'impression que "fait un choix" et "met à jours les infos" sont fusionnable
+je fais donc qu'une fonction metàjour les info qui sera appelé par l'environment que apres le premier tour.
+
+j'implémente tout les agents petit  petit , je me demande si il est pas possible de faire devenir 'tester'agent un TFT agent , je pense que oui mais pas le temps de tester
+
+on peut optimiser joss agent en faisant de TFt sa classe mere ,mais je ne suis pas sur de l'ecriture en python, je reporte à plus tard. 
+
+je définis step, la boucle de round.
+il y a une répétion de donnée et la structure est trés simple, nextAction et action . je vire action.
+
+j'ai terminé , pour une meilleur compréhension de structure, je transforme Environment en Match.
+
+Pour moins de code je fusionne la prise d'info de l'environment vers les agents et le calcule des scores
+
+
+
+
