@@ -37,7 +37,11 @@ Pour moins de code je fusionne la prise d'info de l'environment vers les agents 
 les matchs fonctionnent , je met en place les tournois, puis je ferais la prise de note.
 Pour faciliter la compréhension je met un nom au agent.
 
-Le système de tournois et terminer et fonctionnel , je vais passer à une mise au propre des données sorties , je vais les écrires 
+Le système de tournois et terminer et fonctionnel , je vais passer à une mise au propre des données sorties.
+
+j'ai un sytème de log qui stock les matchs dans un fichier et leurs résultats.
+
+Bug découvert
 
 
 
