@@ -34,6 +34,11 @@ j'ai terminé , pour une meilleur compréhension de structure, je transforme Env
 
 Pour moins de code je fusionne la prise d'info de l'environment vers les agents et le calcule des scores
 
+les matchs fonctionnent , je met en place les tournois, puis je ferais la prise de note.
+Pour faciliter la compréhension je met un nom au agent.
+
+Le système de tournois et terminer et fonctionnel , je vais passer à une mise au propre des données sorties , je vais les écrires 
+
 
 
 

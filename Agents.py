@@ -1,14 +1,18 @@
-import random
+import random 
+R = random.Random(123456789)
 
 class BaseAgent:
+    name = ""
     def __init__(self):
         self.nextAction = None
+        
     
     def learnFromPreviousStep(self,action):
         self.nextAction = None
 #===============================================
 
 class AllD_Agent(BaseAgent):
+    name = "ALLD"
     def __init__(self):
         self.nextAction = 1
     
@@ -19,16 +23,18 @@ class AllD_Agent(BaseAgent):
 
 
 class Random_Agent(BaseAgent):
+    name = "RANDOM"
     def __init__(self):
-        self.nextAction = random.randint(0,1)
+        self.nextAction = R.randint(0,1)
     
     def learnFromPreviousStep(self,action):
-        self.nextAction = random.randint(0,1)
+        self.nextAction = R.randint(0,1)
 
 #===============================================
 
 
 class TFT_Agent(BaseAgent):
+    name = "TIT FOR TAT"
     def __init__(self):
         self.nextAction = 0
     
@@ -38,6 +44,7 @@ class TFT_Agent(BaseAgent):
 #===============================================
 
 class Tester_Agent(BaseAgent):
+    name = "TESTER"
     def __init__(self):
         self.nextAction = 1
         self.i = 0
@@ -56,12 +63,33 @@ class Tester_Agent(BaseAgent):
 #===================================================
 
 class Joss_Agent(BaseAgent):
+    name = "JOSS"
     def __init__(self):
         self.nextAction = 0
     
     def learnFromPreviousStep(self,action):
         act = action
         if not action:
-            act = 1 if random.random() > 0.1 else 0
+            act = 1 if R.random() > 0.1 else 0
         
         self.nextAction = act
+
+#================================================
+
+class AllC_Agent(BaseAgent):
+    name = "ALLC"
+    def __init__(self):
+        self.nextAction = 0
+    
+    def learnFromPreviousStep(self,action):
+        return
+
+#================================================
+
+class BIPHASE_Agent(BaseAgent):
+    name = "BIPHASE"
+    def __init__(self):
+        self.nextAction = 0
+    
+    def learnFromPreviousStep(self,action):
+        self.nextAction = 0 if self.nextAction else 1 

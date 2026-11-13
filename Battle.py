@@ -6,7 +6,7 @@ REWARD = 3
 PUNITION = 2
 # ==========
 
-class Match:
+class Battle:
     def __init__(self,agent1 :BaseAgent ,agent2:BaseAgent):
         self.agent1 = agent1
         self.score1 = 0 
@@ -37,7 +37,7 @@ class Match:
         # calcule des scores
         self._roundScoreLogic(a1,a2)
 
-        # Learning phase
+        # Learning phase and update the action
         self.agent1.learnFromPreviousStep(a2)
         self.agent2.learnFromPreviousStep(a1)
 
