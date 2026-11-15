@@ -41,8 +41,6 @@ def main():
         Tournament.Tournament.matchlog = False
 
 
-    
-
     t = Tournament.Tournament(g)
     t.run()
 

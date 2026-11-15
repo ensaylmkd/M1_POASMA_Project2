@@ -70,7 +70,7 @@ class Joss_Agent(BaseAgent):
     def learnFromPreviousStep(self,action):
         act = action
         if not action:
-            act = 1 if R.random() > 0.1 else 0
+            act = 1 if R.random() < 0.1 else 0
         
         self.nextAction = act
 
