@@ -44,7 +44,15 @@ j'ai un sytème de log qui stock les matchs dans un fichier et leurs résultats.
 Bug découvert, il n'y a pas toute les combinaisons d'agents.
 il semble y avoir un problème avec la selection des agents suivie de sa suppression.
 
-Pour résoudre ce problème , je fais une fonction qui calcule en amont les combinaisons possible et fais une boucle "for" dessus
+Pour résoudre ce problème , je fais une fonction qui calcule en amont les combinaisons possible et fais une boucle "for" dessus.
+
+je rajoute 2 comportement d'agent , un biphase qui alterne et un allC qui ne fait que C.
+Prediction:
+    allC:
+    
+
+
+Ensuite je commence la partie 3 , d'abord j'inverse
 
 
 

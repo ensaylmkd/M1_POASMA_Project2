@@ -4,8 +4,9 @@ from Agents import *
 GROUPE1 = [AllD_Agent,Random_Agent,TFT_Agent,Tester_Agent,Joss_Agent]
 GROUPE2 = [AllD_Agent,Random_Agent,TFT_Agent,Tester_Agent,Joss_Agent,AllC_Agent,BIPHASE_Agent]
 
-class Tournamanent:
+class Tournament:
     matchlog = True
+    unknownEnd = False
     def __init__(self,agents = [AllD_Agent,Random_Agent,TFT_Agent,Tester_Agent,Joss_Agent]):
         self.agents = agents
         self.logData = {"log":"",'scores' :dict.fromkeys(self.agents, 0)}
@@ -50,15 +51,29 @@ class Tournamanent:
         ag2 = a2()
         battle = Battle(ag1,ag2)
         log = ""
+        t = 1
+        i = 1
+        w = 0
+        w_increase = 0.01/n
 
-        for i in range(1,n+1):
+        while i < n+1:
             if self.matchlog:
-                log+=" ".join(["round",str(i),"| "])
+                log+=" ".join(["round",str(t),"| "])
                 log+=" ".join([str(ag1.nextAction),"-",str(ag2.nextAction)])
 
             battle.round()
+
             if self.matchlog:
                 log+=" ".join([" | score",str(battle.score1),'vs',str(battle.score2),"\n"])
+
+            if self.unknownEnd:
+                if R.random() < w:
+                    i += n
+                w += w_increase
+                i-=1
+            i += 1
+            t+=1
+            
 
         if battle.score1 > battle.score2:
             gagnant = a1
@@ -74,5 +89,5 @@ class Tournamanent:
 
 
 if __name__ == "__main__":
-    t = Tournamanent(GROUPE2)
+    t = Tournament(GROUPE2)
     t.run()
